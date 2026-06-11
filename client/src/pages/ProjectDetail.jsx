@@ -171,7 +171,7 @@ export default function ProjectDetail() {
                     <div className="file-name">{f.originalName}</div>
                     <div className="file-size">{formatBytes(f.size)} · {new Date(f.uploadedAt).toLocaleDateString()}</div>
                   </div>
-                  <a href={`http://localhost:5000/uploads/${f.filename}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm" onClick={e => e.stopPropagation()}>↓</a>
+                  <a href={`${process.env.REACT_APP_SERVER_URL}/uploads/${f.filename}`} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm" onClick={e => e.stopPropagation()}>↓</a>
                   <button className="btn btn-danger btn-sm" onClick={() => deleteFile(f._id)}>✕</button>
                 </div>
               ))}
